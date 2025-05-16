@@ -1,43 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:act7/menu.dart';
+import 'package:act7/widget_uno.dart';
+import 'package:act7/widget_dos.dart';
+import 'package:act7/widget_tres.dart';
+import 'package:act7/widget_cuatro.dart';
+import 'package:act7/widget_cinco.dart';
+import 'package:act7/widget_seis.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MisWidgetsRutas());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MisWidgetsRutas extends StatelessWidget {
+  const MisWidgetsRutas({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Entre Paginas Routes',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Menu(),
+        '/pantalla1': (context) => const WidgetUno(),
+        '/pantalla2': (context) => const WidgetDos(),
+        '/pantalla3': (context) => const WidgetTres(),
+        '/pantalla4': (context) => const WidgetCuatro(),
+        '/pantalla5': (context) => const WidgetCinco(),
+        '/pantalla6': (context) => const WidgetSeis(),
+      },
     );
   }
 }
